@@ -1,6 +1,13 @@
 const gulp = require('gulp');
 const sass = require('gulp-sass')(require('sass'));
 const sourcemaps = require('gulp-sourcemaps');
+const imagemin = require('gulp-imagemin');
+
+function imageCompressor() {
+    return gulp.src('./src/images/*', { encoding:false,})
+    .pipe(imagemin())
+    .pipe(gulp.dest('./dist/images'))
+};
 
 function compileSass() {
     return gulp.src('./src/styles/main.scss')
@@ -11,5 +18,6 @@ function compileSass() {
 };
 
 exports.default = function() {
+    gulp.watch('./src/images/*', {ignoreInitial: false}, gulp.parallel(imageCompressor));
     gulp.watch('./src/styles/*.scss', {ignoreInitial: false}, gulp.series(compileSass));
 };
