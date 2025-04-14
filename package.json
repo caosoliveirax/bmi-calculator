@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "gulp": "gulp",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -16,10 +17,12 @@
     "url": "https://github.com/caosoliveirax/imc-calculator/issues"
   },
   "homepage": "https://github.com/caosoliveirax/imc-calculator#readme",
-  "description": "",
   "devDependencies": {
     "gulp": "^5.0.0",
     "gulp-sass": "^6.0.1",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-uglify": "^3.0.2",
     "sass": "^1.86.3"
-  }
+  },
+  "description": ""
 }
