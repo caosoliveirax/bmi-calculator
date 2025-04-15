@@ -25,5 +25,8 @@
     "gulp-uglify": "^3.0.2",
     "sass": "^1.86.3"
   },
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "bootstrap": "^5.3.5"
+  }
 }
