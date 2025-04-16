@@ -1,15 +1,33 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calcule seu IMC</title>
-    <link rel="stylesheet" href="./dist/styles/main.css">
     <link rel="stylesheet" href="./dist/styles/bootstrap.min.css">
+    <link rel="stylesheet" href="./dist/styles/main.css">
 </head>
 <body>
-
-    <script src="./dist/scripts/main.js"></script>
+    <main class="container min-vh-100 d-flex justify-content-center align-items-center">
+        <div class="container calculator-box">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="text-center">Calculadora de IMC</h1>
+                    <p>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptas dolore excepturi, placeat error nihil quos nemo, voluptates sequi quisquam atque repellendus itaque obcaecati dolorem odio! Nobis, reiciendis. Culpa, sed nobis.
+                    </p>
+                    <form class="d-flex flex-column align-items-center">
+                        <label>Altura (cm)</label>
+                        <input id="height" name="height" class="mb-2" type="number">
+                        <label>Peso (kg)</label>
+                        <input id="weight" name="weight" class="mb-2" type="number">
+                        <button class="btn btn-outline-primary">Calcular</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
     <script src="./dist/scripts/bootstrap.bundle.js"></script>
+    <script src="./dist/scripts/main.js"></script>
 </body>
 </html>

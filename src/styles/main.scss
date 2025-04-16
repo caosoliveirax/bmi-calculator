@@ -1,0 +1,19 @@
+@use 'variables';
+@use 'reset';
+
+body {
+    background-color: variables.$bg-color;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.calculator-box {
+    background-color: variables.$main-color;
+    border: 1px rgb(0, 0, 0) solid;
+    border-radius: 16px;
+}
+
+input {
+    background-color: transparent;
+    border: 1px rgb(0, 0, 0) solid;
+    border-radius: 16px;
+}
