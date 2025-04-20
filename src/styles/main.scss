@@ -1,19 +1,38 @@
-@use 'variables';
-@use 'reset';
+// Variáveis e mixins
+@use 'abstracts/vars';
+@use 'abstracts/mixins';
+
+// Globais
+@use 'base/reset';
 
 body {
-    background-color: variables.$bg-color;
-    font-family: Arial, Helvetica, sans-serif;
+    background-color: vars.$bg-color;
+    font-family: vars.$text-font;
+    color: vars.$text-color;
 }
 
 .calculator-box {
-    background-color: variables.$main-color;
-    border: 1px rgb(0, 0, 0) solid;
-    border-radius: 16px;
+    background-color: vars.$calculator-color;
+    border-radius: 16px 32px;
+    min-height: 300px; 
+    max-width: 300px;  
+    padding: 2rem;
+    box-shadow: 0px 1px 30px 0px vars.$elements-color;
+    
+    .title {
+        font-family: vars.$title-font;
+        color: vars.$title-color;
+        font-size: 40px;
+        font-weight: 500;
+    }
+
+    .btn-calculator {
+        background-color: vars.$elements-color;
+        border-radius: 8px;
+        border: transparent;
+        box-shadow: 0px 1px 30px 0px #9c9e9e7c ;
+        width: 100px;
+        height: 35px;
+    }
 }
 
-input {
-    background-color: transparent;
-    border: 1px rgb(0, 0, 0) solid;
-    border-radius: 16px;
-}
