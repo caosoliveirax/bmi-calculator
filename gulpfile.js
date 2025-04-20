@@ -4,10 +4,15 @@ const sourcemaps = require('gulp-sourcemaps');
 const imagemin = require('gulp-imagemin');
 const uglify = require('gulp-uglify');
 
+function copyHtml() {
+    return gulp.src('./src/index.html')
+        .pipe(gulp.dest('./dist'));
+}
+
 function imageCompressor() {
     return gulp.src('./src/images/*', { encoding:false,})
-    .pipe(imagemin())
-    .pipe(gulp.dest('./dist/images'))
+        .pipe(imagemin())
+        .pipe(gulp.dest('./dist/images'))
 };
 
 function compileSass() {
@@ -18,20 +23,26 @@ function compileSass() {
         .pipe(gulp.dest('./dist/styles'));
 }
 
-function copyBootstrap() {
-    return gulp.src('./node_modules/bootstrap/dist/css/bootstrap.min.css')
-    .pipe(gulp.dest('./dist/styles'));
-}
-
 function jsCompressor() {
     return gulp.src('./src/scripts/*.js')
-    .pipe(uglify())
-    .pipe(gulp.dest('./dist/scripts'))
+        .pipe(uglify())
+        .pipe(gulp.dest('./dist/scripts'))
 };
 
-exports.default = function() {
-    gulp.watch('./src/images/*', {ignoreInitial: false}, gulp.parallel(imageCompressor));
-    gulp.watch('./src/styles/*.scss', {ignoreInitial: false}, gulp.series(compileSass));
-    gulp.watch('./src/scripts/*.js', {ignoreInitial: false}, gulp.series(jsCompressor));
-    gulp.series(copyBootstrap)();
+function watchFiles() {
+    gulp.watch('./src/*.html', copyHtml)
+    gulp.watch('./src/images/*', imageCompressor);
+    gulp.watch('./src/styles/**/*.scss', compileSass);
+    gulp.watch('./src/scripts/*.js', jsCompressor);
 };
+
+function copyBootstrap() {
+    return gulp.src('./node_modules/bootstrap/dist/css/bootstrap.min.css')
+        .pipe(gulp.dest('./dist/styles'));
+}
+
+exports.default = gulp.series(
+    gulp.parallel(copyHtml, imageCompressor, compileSass, jsCompressor), watchFiles
+);
+
+exports.setup = gulp.series(copyBootstrap);

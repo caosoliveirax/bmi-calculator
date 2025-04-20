@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcule seu IMC</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/bootstrap.min.css">
+    <link rel="stylesheet" href="./styles/main.css">
+</head>
+<body>
+    <main class="container min-vh-100 d-flex justify-content-center align-items-center">
+        <div class="container calculator-box">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="title text-center">Calculadora IMC</h1>
+                    <p>
+                        Ferramenta prática para calcular o Índice de Massa Corporal, avaliando peso e altura de forma simples e eficiente.
+                    </p>
+                    <form class="">
+                        <div class="row">
+                            <div class="col-12">
+                                <label>Altura (cm)</label>
+                                <input id="height" name="height" class="mb-3" required type="number">
+                                <label>Peso (kg)</label>
+                                <input id="weight" name="weight" class="mb-3" required type="number">
+                            </div>
+                        </div>
+                        <button class="btn-calculator">Calcular</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="./dist/scripts/bootstrap.bundle.js"></script>
+    <script src="./dist/scripts/bmiCalculator.js"></script>
+</body>
+</html>
