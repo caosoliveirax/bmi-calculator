@@ -1,23 +1,25 @@
 // Variáveis e mixins
 @use 'abstracts/vars';
-@use 'abstracts/mixins';
+@use 'abstracts/_mixins';
 
 // Globais
 @use 'base/reset';
 
+// Componentes
+@use 'components/cards';
+
 body {
-    background-color: vars.$bg-color;
+    background: vars.$bg-color;
     font-family: vars.$text-font;
     color: vars.$text-color;
 }
 
+.calculator-wrapper {
+    position: relative;
+}
+
 .calculator-box {
-    background-color: vars.$calculator-color;
-    border-radius: 16px 32px;
-    min-height: 300px; 
-    max-width: 300px;  
-    padding: 2rem;
-    box-shadow: 0px 1px 30px 0px vars.$elements-color;
+    @include mixins.cards-design($bg-color: vars.$primary-color, $border-color: vars.$elements-color);
     
     .title {
         font-family: vars.$title-font;
@@ -27,12 +29,25 @@ body {
     }
 
     .btn-calculator {
-        background-color: vars.$elements-color;
-        border-radius: 8px;
-        border: transparent;
-        box-shadow: 0px 1px 30px 0px #9c9e9e7c ;
-        width: 100px;
-        height: 35px;
+        @include mixins.buttons-design($bg-color: vars.$elements-color, $border-color: vars.$elements-color)
     }
+}
+
+.result-box {
+    @include mixins.cards-design($bg-color: vars.$primary-color, $border-color: vars.$elements-color, $position: absolute);
+    top: 50%; 
+    left: 50%;
+    transform: scale(0.0);
+    z-index: 2; 
+    opacity: 0; 
+
+    .btn-back {
+        @include mixins.buttons-design($bg-color: vars.$elements-color, $border-color: vars.$elements-color)
+    }
+}
+
+.result-box.show {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1); 
 }
 
