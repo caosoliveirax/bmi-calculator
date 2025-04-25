@@ -46,6 +46,17 @@ body {
     }
 }
 
+input.error {
+    border: 2px solid red;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.8em;
+    
+}
+
+
 .result-box.show {
     opacity: 1;
     transform: translate(-50%, -50%) scale(1); 

@@ -1,12 +1,12 @@
-function validateData(height, weight) {
+export function validateData(height, weight) {
     const errors = [];
 
     if (height <= 0) {
-        errors.push('A altura deve ser maior que zero.');
+        errors.push('Insira sua altura');
     }
 
     if (weight <= 0) {
-        errors.push('O peso deve ser maior que zero.');
+        errors.push('Insira seu peso');
     }
 
     return errors;
@@ -32,7 +32,7 @@ function calculateBmi(weight, heightInMeters) {
     return weight / (heightInMeters ** 2);
 };
 
-function getBmiResults(height, weight) {
+export function getBmiResults(height, weight) {
     const errors = validateData(height, weight);
 
     if (errors.length > 0) {
@@ -46,5 +46,3 @@ function getBmiResults(height, weight) {
 
     return {bmi: bmiFormatted, category}
 }
-
-module.exports = { validateData, calculateBmi, calculateBmi, getBmiResults};

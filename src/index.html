@@ -19,30 +19,30 @@
                     <p>
                         Ferramenta prática para calcular o Índice de Massa Corporal, avaliando peso e altura de forma simples e eficiente.
                     </p>
-                    <form class="calculator-form">
+                    <form class="calculator-form d-flex flex-column">
                         <div class="row">
-                            <div class="col-12">
-                                <label>Altura (cm)</label>
-                                <input id="height" name="height" class="mb-3" required type="number">
-                                <label>Peso (kg)</label>
-                                <input id="weight" name="weight" class="mb-3" required type="number">
+                            <div class="col-6">
+                                <label class="mt-3">Altura (cm)</label>
+                                <input id="height" name="height" required type="number">
+                                <label class="mt-3">Peso (kg)</label>
+                                <input id="weight" name="weight" required type="number">
                             </div>
                         </div>
-                        <button class="btn-calculator">Calcular</button>
+                        <button type="button" class="btn-calculator mt-4">Calcular</button>
                     </form>
                 </div>
             </div>
         </div>
 
         <div id="result" class="result-box card-back">
-            <h2 class="title text-center">Seu IMC é: <span>20.78</span></h2>
-            <p class="text-center">Normal</p>
+            <h2 class="title text-center">Seu IMC é: <span></span></h2>
+            <p class="text-center"></p>
             <button type="button" class="btn-back">Voltar</button>
         </div>
     </main>
     <script src="./scripts/lib/jquery.min.js"></script>
     <script src="./scripts/bootstrap.bundle.js"></script>
-    <script src="./scripts/bmiCalculator.js"></script>
-    <script src="./scripts/app.js"></script>
+    <script type="module" src="./scripts/bmiCalculator.js"></script>
+    <script type="module" src="./scripts/app.js"></script>
 </body>
 </html>
