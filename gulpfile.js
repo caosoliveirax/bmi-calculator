@@ -24,7 +24,7 @@ function compileSass() {
 }
 
 function jsCompressor() {
-    return gulp.src('./src/scripts/*.js')
+    return gulp.src('./src/scripts/**/*.js')
         .pipe(uglify())
         .pipe(gulp.dest('./dist/scripts'))
 };
@@ -41,8 +41,13 @@ function copyBootstrap() {
         .pipe(gulp.dest('./dist/styles'));
 }
 
+function copyjQuery() {
+    return gulp.src('./node_modules/jquery/dist/jquery.min.js')
+        .pipe(gulp.dest('./dist/scripts/lib'));
+}
+
 exports.default = gulp.series(
     gulp.parallel(copyHtml, imageCompressor, compileSass, jsCompressor), watchFiles
 );
 
-exports.setup = gulp.series(copyBootstrap);
+exports.setup = gulp.series(copyBootstrap, copyjQuery);
