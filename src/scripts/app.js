@@ -18,7 +18,8 @@ $('.btn-calculator').on('click', function(e) {
                 $('#weight').addClass('error').after(`<span class="error-message">${error}</span>`);
             }
         });
-    } else {
+    } else { 
+        $('.card').addClass('flipped')
         $('#result span').text(bmiResults.bmi);
         $('#result p').text(bmiResults.category);
         $('#result').addClass('show');
@@ -32,6 +33,7 @@ $('.btn-back').on('click', function() {
     $('#result span').text('');
     $('#result p').text('');
 
+    $('.card').removeClass('flipped')
     $('#result').removeClass('show');
 });
 

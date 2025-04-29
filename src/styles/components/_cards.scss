@@ -1,0 +1,44 @@
+@use 'abstracts/_vars';
+@use 'abstracts/_mixins';
+
+.card-container {
+    width: 300px; 
+    height: 500px;
+    perspective: 1000px;
+    margin: 0 auto;
+    padding: 50px 0;
+}
+
+.card {
+    @include mixins.design-cards($bg-color: transparent, $b-shadow: transparent, $position: relative, $visible-bf: unset);
+    transform-style: preserve-3d;
+    transition: transform 0.8s;
+}
+
+.calculator-card-front {
+    @include mixins.design-cards($bg-color: #fff);
+
+    .title {
+        font-family: vars.$title-font;
+        color: vars.$title-color;
+        font-size: 40px;
+        font-weight: 500;
+    }
+
+    .btn-calculator {
+        @include mixins.buttons-design($bg-color: vars.$elements-color, $border-color: vars.$elements-color)
+    }
+}
+
+.result-card-back {
+    @include mixins.design-cards($bg-color: #00e1ff, $border-rd: 32px 16px);
+    transform: rotateY(180deg); 
+
+    .btn-back {
+        @include mixins.buttons-design($bg-color: vars.$elements-color, $border-color: vars.$elements-color)
+    }
+}
+
+.card.flipped {
+    transform: rotateY(180deg);
+}

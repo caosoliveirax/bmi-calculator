@@ -14,38 +14,6 @@ body {
     color: vars.$text-color;
 }
 
-.calculator-wrapper {
-    position: relative;
-}
-
-.calculator-box {
-    @include mixins.cards-design($bg-color: vars.$primary-color, $border-color: vars.$elements-color);
-    
-    .title {
-        font-family: vars.$title-font;
-        color: vars.$title-color;
-        font-size: 40px;
-        font-weight: 500;
-    }
-
-    .btn-calculator {
-        @include mixins.buttons-design($bg-color: vars.$elements-color, $border-color: vars.$elements-color)
-    }
-}
-
-.result-box {
-    @include mixins.cards-design($bg-color: vars.$primary-color, $border-color: vars.$elements-color, $position: absolute);
-    top: 50%; 
-    left: 50%;
-    transform: scale(0.0);
-    z-index: 2; 
-    opacity: 0; 
-
-    .btn-back {
-        @include mixins.buttons-design($bg-color: vars.$elements-color, $border-color: vars.$elements-color)
-    }
-}
-
 input.error {
     border: 2px solid red;
 }
@@ -55,7 +23,6 @@ input.error {
     font-size: 0.8em;
     
 }
-
 
 .result-box.show {
     opacity: 1;

@@ -1,18 +1,20 @@
-@mixin cards-design($bg-color: vars.$primary-color, $border-color: vars.$elements-color, $position: relative) {
+@mixin design-cards($bg-color, $border-rd: 32px 32px, $b-shadow: 0px 4px 16px rgba(0, 0, 0, 0.2), $position: absolute, $visible-bf: hidden) {
     background-color: $bg-color;
-    border-radius: 16px 32px;
-    width: 300px; 
-    height: 500px;
-    display: flex;  
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem;
+    border-radius: $border-rd;
+    border: 2px solid $bg-color;
     box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.2);
-    border: 2px solid $border-color;
-    transition: all 0.3s ease-in-out;
-    position: $position; 
-    z-index: 1; 
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+    
+    backface-visibility: $visible-bf; 
+    position: $position;
 }
 
 @mixin buttons-design($bg-color: vars.$elements-color, $border-color: vars.$elements-color) {
@@ -20,6 +22,7 @@
     border-radius: 8px;
     box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.2);
     border: 2px solid $border-color;
-    width: 100px;
+    width: 100%;
     height: 35px;
 }
+
