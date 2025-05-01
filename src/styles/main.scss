@@ -15,14 +15,25 @@ body {
 }
 
 input.error {
-    border: 2px solid red;
+    border: 1px solid rgba(255, 0, 0, 0.445);
 }
 
-.error-message {
-    color: red;
+.field-wrapper {
+    position: relative;
+    margin-bottom: 8px;    
+
+    .error-message {
+    position: absolute;   
+    top: 110%;             
+    left: 0;
+    width: 100%;           
+    color: rgba(255, 0, 0, 0.644);
     font-size: 0.8em;
-    
+    transform: translateY(-0.5rem);
+    transition: opacity 0.2s, transform 0.2s;
 }
+}
+
 
 .result-box.show {
     opacity: 1;
