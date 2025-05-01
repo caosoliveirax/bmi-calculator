@@ -21,7 +21,7 @@ $('.btn-calculator').on('click', function(e) {
     } else { 
         $('.card').addClass('flipped')
         $('#result span').text(bmiResults.bmi);
-        $('#result p').text(bmiResults.category);
+        $('#result h3').text(bmiResults.category);
         $('#result').addClass('show');
     }
 });
