@@ -13,6 +13,10 @@
     @include mixins.design-cards($bg-color: transparent, $b-shadow: transparent, $position: relative, $visible-bf: unset);
     transform-style: preserve-3d;
     transition: transform 0.8s;
+
+    &.flipped {
+        transform: rotateY(180deg);
+    }
 }
 
 .calculator-card-front {
@@ -22,23 +26,53 @@
         font-family: vars.$title-font;
         color: vars.$title-color;
         font-size: 40px;
-        font-weight: 500;
+        font-weight: 400;
+    }
+
+    p {
+        font-size: 1rem;
+        font-weight: 300;
+        text-align: center;
+    }
+
+    label {
+        font-weight: 300;
+    }
+
+    input {
+        font-weight: 200;
+        height: 36px;
+        padding: 12px;
+        border: 1px solid #dee2e6;
+        border-radius: 6px;
     }
 
     .btn-calculator {
+        font-size: 1rem;
+        font-weight: 300;
         @include mixins.buttons-design($bg-color: vars.$elements-color, $border-color: vars.$elements-color)
     }
 }
 
 .result-card-back {
-    @include mixins.design-cards($bg-color: #00e1ff, $border-rd: 32px 16px);
+    @include mixins.design-cards($bg-color: vars.$primary-color, $border-rd: 32px 16px);
     transform: rotateY(180deg); 
 
+    .bmi-result {
+        font-size: 3rem;
+    }
+
+    .bmi-category {
+        font-size: 2rem;
+    }
+
     .btn-back {
-        @include mixins.buttons-design($bg-color: vars.$elements-color, $border-color: vars.$elements-color)
+        font-size: 1rem;
+        font-weight: 300;
+        @include mixins.buttons-design($bg-color: vars.$elements-color, $border-color: vars.$elements-color);
+        position: absolute;
+        bottom: 25px;
     }
 }
 
-.card.flipped {
-    transform: rotateY(180deg);
-}
+
