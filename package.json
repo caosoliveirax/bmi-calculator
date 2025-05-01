@@ -1,6 +1,7 @@
 {
-  "name": "imc-calculator",
+  "name": "bmi-calculator",
   "version": "1.0.0",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "gulp": "gulp",
@@ -8,27 +9,26 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/caosoliveirax/imc-calculator.git"
+    "url": "git+https://github.com/caosoliveirax/bmi-calculator.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/caosoliveirax/imc-calculator/issues"
+    "url": "https://github.com/caosoliveirax/bmi-calculator/issues"
   },
-  "homepage": "https://github.com/caosoliveirax/imc-calculator#readme",
+  "homepage": "https://github.com/caosoliveirax/bmi-calculator#readme",
   "devDependencies": {
     "gulp": "^5.0.0",
     "gulp-imagemin": "^7.1.0",
     "gulp-sass": "^6.0.1",
     "gulp-sourcemaps": "^3.0.0",
     "gulp-uglify": "^3.0.2",
-    "prompt-sync": "^4.2.0",
     "sass": "^1.86.3"
   },
-  "description": "",
   "dependencies": {
     "bootstrap": "^5.3.5",
     "jquery": "^3.7.1"
   }
 }
+
