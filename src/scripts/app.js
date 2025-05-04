@@ -6,6 +6,7 @@ $('.btn-calculator').on('click', function(e) {
     
     const bmiResults = getBmiResults(height, weight);
 
+    $('#result span, #result h3').removeClass('hidden');
     $('.error-message').remove();
     $('#height, #weight').removeClass('error');
 
@@ -26,14 +27,12 @@ $('.btn-calculator').on('click', function(e) {
     }
 });
 
-$('.btn-back').on('click', function() {
+$('.btn-back').on('click', function () {
     $('#height').val('');
     $('#weight').val('');
-    
-    $('#result span').text('');
-    $('#result p').text('');
 
-    $('.card').removeClass('flipped')
+    $('#result span, #result h3').addClass('hidden');
+
+    $('.card').removeClass('flipped');
     $('#result').removeClass('show');
 });
-
