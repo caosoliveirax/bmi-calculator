@@ -18,24 +18,22 @@
                     <div class="col-12">
                         <h1 class="title text-center">Calculadora IMC</h1>
                         <p class="mt-4">
-                            Preencha os campos abaixo para calcular o seu Índice de Massa Corporal (IMC), avaliando peso e altura de forma simples e eficiente.
+                            Preencha os campos abaixo para calcular o seu Índice de Massa Corporal
                         </p>
-                        <form class="calculator-form d-flex flex-column">
+                        <form autocomplete="off" class="calculator-form d-flex flex-column">
                             <div class="row">
                                 <div class="col-6">
                                     <div class="field-wrapper">
-                                      <label class="mt-3" for="height">Altura (cm)</label>
-                                      <input id="height" name="height" required type="number">
-                                      <div class="error-message"></div>
+                                        <label class="mt-3" for="height">Altura (cm)</label>
+                                        <input id="height" name="height" required type="number" placeholder="ex: 170" onfocus="this.placeholder=''" onblur="this.placeholder='ex: 170'">
+                                        <div class="error-message"></div>
                                     </div>
-                                  
                                     <div class="field-wrapper">
-                                      <label class="mt-3" for="weight">Peso (kg)</label>
-                                      <input id="weight" name="weight" required type="number">
-                                      <div class="error-message"></div>
+                                        <label class="mt-3" for="weight">Peso (kg)</label>
+                                        <input id="weight" name="weight" required type="number" placeholder="ex: 60"onfocus="this.placeholder=''" onblur="this.placeholder='ex: 60'">
+                                        <div class="error-message"></div>
                                     </div>
-                                  </div>
-                                  
+                                </div>
                             </div>
                             <button type="button" class="btn-calculator mt-4">Calcular</button>
                         </form>
@@ -49,7 +47,6 @@
                 <button type="button" class="btn-back">Voltar</button>
             </div>
         </div>
-        
     </main>
     <script src="./scripts/lib/jquery.min.js"></script>
     <script src="./scripts/bootstrap.bundle.js"></script>
