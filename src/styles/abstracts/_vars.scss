@@ -1,10 +1,14 @@
-// Cores sólidas
-$bg-color: #00e1ff;
-$primary-color: #fff;
-$text-color: #424242;
-$title-color: #00e1ff;
-$elements-color: #00ccff7c;
+// Cores 
+$color-primary: #fff;
+$color-secondary: #00e1ff;
+$color-accent: rgba(0, 204, 255, 0.49);
+$color-text: #333;
+$color-title: $color-secondary;
 
-// Tipografia
-$text-font: "Inter", sans-serif;
-$title-font: "Funnel Display", sans-serif;
+// Cores de estado
+$color-input-border: #dee2e6;
+$color-error: rgba(255, 0, 0, 0.644); 
+
+// Fontes
+$font-body: "Inter", sans-serif;
+$font-heading: "Funnel Display", sans-serif;
