@@ -1,6 +1,6 @@
 // Variáveis e mixins
 @use 'abstracts/vars';
-@use 'abstracts/_mixins';
+@use 'abstracts/mixins';
 
 // Globais
 @use 'base/reset';
@@ -9,13 +9,12 @@
 @use 'components/cards';
 
 body {
-    background: vars.$bg-color;
-    font-family: vars.$text-font;
-    color: vars.$text-color;
+    background: vars.$color-secondary;
+    font-family: vars.$font-body;
 }
 
 input.error {
-    border: 1px solid rgba(255, 0, 0, 0.445);
+    border: 1px solid vars.$color-error;
 }
 
 .field-wrapper {
@@ -27,7 +26,7 @@ input.error {
     top: 110%;             
     left: 0;
     width: 100%;           
-    color: rgba(255, 0, 0, 0.644);
+    color: vars.$color-error;
     font-size: 0.8em;
     transform: translateY(-0.5rem);
     transition: opacity 0.2s, transform 0.2s;
